@@ -19,7 +19,6 @@ jobs:
       - run: npm run test:ci
       - name: Rebuild
         run: |
-          npm i -g @zeit/ncc
           npm run build
 
       - name: Commit prettier changes
