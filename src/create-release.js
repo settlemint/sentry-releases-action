@@ -44,6 +44,7 @@ const run = async () => {
     if(sourceMapsPath) {
       await cli.releases.uploadSourceMaps(releaseName, {
         include: [sourceMapsPath],
+        ext: ['js', 'map', 'jsbundle', 'bundle', 'ts']
       });
     }
 
