@@ -1,4 +1,4 @@
-name: 'Create a Sentry.io release'
+name: 'Create a Sentry.io release (with sourcemaps)'
 description: 'Sentry.io releases for GitHub Actions'
 inputs:
   tagName:
@@ -9,6 +9,9 @@ inputs:
     required: true
   releaseNamePrefix:
     description: 'String to prefix tagName with. Used as the Sentry release name.'
+    required: false
+  sourceMapsPath:
+    description: 'Path for the sourcemaps'
     required: false
 runs:
   using: 'node12'
