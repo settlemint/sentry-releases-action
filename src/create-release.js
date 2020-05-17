@@ -41,10 +41,10 @@ const run = async () => {
       required: false,
     });
 
-    if(sourceMapsPath) {
+    if (sourceMapsPath) {
       await cli.releases.uploadSourceMaps(releaseName, {
         include: [sourceMapsPath],
-        ext: ['js', 'map', 'jsbundle', 'bundle', 'ts']
+        ext: ['js', 'map', 'jsbundle', 'bundle', 'ts'],
       });
     }
 
