@@ -17,3 +17,15 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
+      - name: Rebuild
+        run: |
+          npm i -g @zeit/ncc
+          npm run build
+
+      - name: Commit prettier changes
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: "fix: rebuild"
+          branch: ${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
